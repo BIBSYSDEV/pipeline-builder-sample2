@@ -24,10 +24,18 @@ Parameters:
 
 
 Resources:
+  DatabaseGroup:
+    Type: "AWS::RDS::DBClusterParameterGroup"
+    Properties: 
+      Description: A friendly description
+      Family: aurora5.6
+      Parameters: {}
+
   Database:
     Type: "AWS::RDS::DBCluster"
     Properties:
       Engine: aurora-mysql
+      DBClusterParameterGroupName: !Ref DatabaseGroup
       MasterUsername: '{{resolve:secretsmanager:MyRDSSecret:SecretString:username}}'
       MasterUserPassword: '{{resolve:secretsmanager:MyRDSSecret:SecretString:password}}'
     
