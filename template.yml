@@ -29,7 +29,8 @@ Resources:
     Properties: 
       Description: A friendly description
       Family: aurora5.6
-      Parameters: {}
+      Parameters: 
+        aurora_enable_replica_log_compression: true
 
   Database:
     Type: "AWS::RDS::DBCluster"
