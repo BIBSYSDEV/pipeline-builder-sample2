@@ -29,8 +29,8 @@ Resources:
     Properties: 
       Description: A friendly description
       Family: aurora-mysql5.7
-#      Parameters: 
-#        aurora_enable_replica_log_compression: true
+      Parameters: 
+        autocommit: 0
 
   Database:
     Type: "AWS::RDS::DBCluster"
