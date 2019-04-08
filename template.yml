@@ -6,21 +6,21 @@ Parameters:
   ProjectId:
    Type: String
    Description: Automatically generated ProjectId based on repository and branch
- Stage:
-  Type: String
-  Description: Deployment stage. Either TEST or FINAL
- Branch:
-  Type: String
-  Description: The Git branch
- CodeBucket:
-  Type: String
-  Description: Automatically generated bucket where the code is stored
- InitFunctionName:
-  Type: String
-  Description: Automatically generated name for the initialization function
- DestroyFunctionName:
-  Type:  String
-  Description: Automatically generated name for the destroy function 
+  Stage:
+   Type: String
+   Description: Deployment stage. Either TEST or FINAL
+  Branch:
+   Type: String
+   Description: The Git branch
+  CodeBucket:
+   Type: String
+   Description: Automatically generated bucket where the code is stored
+  InitFunctionName:
+   Type: String
+   Description: Automatically generated name for the initialization function
+  DestroyFunctionName:
+   Type:  String
+   Description: Automatically generated name for the destroy function 
 
 
 Resources:
