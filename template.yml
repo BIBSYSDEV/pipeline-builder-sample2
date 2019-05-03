@@ -42,7 +42,7 @@ Resources:
     
     
   Init:
-    Type: AWS::Serverless::Funcction
+    Type: AWS::Serverless::Function
     Properties:
       Handler: index.myHandler
       InlineCode: >
