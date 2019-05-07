@@ -39,8 +39,13 @@ Resources:
       DBClusterParameterGroupName: !Ref DatabaseGroup
       MasterUsername: '{{resolve:secretsmanager:MyRDSSecret:SecretString:username}}'
       MasterUserPassword: '{{resolve:secretsmanager:MyRDSSecret:SecretString:password}}'
-    
-    
+      Policies:
+        Version: '2012-10-17'
+        Statement:
+        - Action:
+          - rds:CreateDBClusterParameterGroup
+          Resource: "*"
+          Effect: Allow
   Init:
     Type: AWS::Serverless::Function
     Properties:
