@@ -31,6 +31,13 @@ Resources:
       Family: aurora-mysql5.7
       Parameters: 
         autocommit: 0
+      Policies:
+        Version: '2012-10-17'
+        Statement:
+        - Action:
+          - rds:CreateDBClusterParameterGroup
+          Resource: "*"
+          Effect: Allow
 
   Database:
     Type: "AWS::RDS::DBCluster"
