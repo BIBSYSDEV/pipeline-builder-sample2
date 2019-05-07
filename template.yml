@@ -24,35 +24,35 @@ Parameters:
 
 
 Resources:
-  DatabaseGroup:
-    Type: "AWS::RDS::DBClusterParameterGroup"
-    Properties: 
-      Description: A friendly description
-      Family: aurora-mysql5.7
-      Parameters: 
-        autocommit: 0
-      Policies:
-        Version: '2012-10-17'
-        Statement:
-        - Action:
-          - rds:CreateDBClusterParameterGroup
-          Resource: "*"
-          Effect: Allow
-
-  Database:
-    Type: "AWS::RDS::DBCluster"
-    Properties:
-      Engine: aurora-mysql
-      DBClusterParameterGroupName: !Ref DatabaseGroup
-      MasterUsername: '{{resolve:secretsmanager:MyRDSSecret:SecretString:username}}'
-      MasterUserPassword: '{{resolve:secretsmanager:MyRDSSecret:SecretString:password}}'
-      Policies:
-        Version: '2012-10-17'
-        Statement:
-        - Action:
-          - rds:CreateDBClusterParameterGroup
-          Resource: "*"
-          Effect: Allow
+#  DatabaseGroup:
+#    Type: "AWS::RDS::DBClusterParameterGroup"
+#    Properties: 
+#      Description: A friendly description
+#      Family: aurora-mysql5.7
+#      Parameters: 
+#        autocommit: 0
+#      Policies:
+#        Version: '2012-10-17'
+#        Statement:
+#        - Action:
+#          - rds:CreateDBClusterParameterGroup
+#          Resource: "*"
+#          Effect: Allow
+#
+#  Database:
+#    Type: "AWS::RDS::DBCluster"
+#    Properties:
+#      Engine: aurora-mysql
+#      DBClusterParameterGroupName: !Ref DatabaseGroup
+#      MasterUsername: '{{resolve:secretsmanager:MyRDSSecret:SecretString:username}}'
+#      MasterUserPassword: '{{resolve:secretsmanager:MyRDSSecret:SecretString:password}}'
+#      Policies:
+#        Version: '2012-10-17'
+#        Statement:
+#        - Action:
+#          - rds:CreateDBClusterParameterGroup
+#          Resource: "*"
+#          Effect: Allow
   Init:
     Type: AWS::Serverless::Function
     Properties:
