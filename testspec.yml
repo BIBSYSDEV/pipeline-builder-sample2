@@ -12,5 +12,5 @@ phases:
       - echo "doing nothing"
   post_build:
     commands:
-      - eggcho "post_build step"
+      - echo "post_build step"
     
