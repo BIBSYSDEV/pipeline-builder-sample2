@@ -12,5 +12,5 @@ phases:
       - eccccccho "doing nothing"
   post_build:
     commands:
-      - eccccho "post_build step"
+      - ecccccho "post_build step"
     
