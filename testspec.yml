@@ -9,7 +9,7 @@ phases:
       - echo "pre_build step"
   build:
     commands:
-      - echo "doing nothing"
+      - ei ok cho "doing nothing"
   post_build:
     commands:
       - echo "post_build step"
